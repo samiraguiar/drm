@@ -1,0 +1,20 @@
+<div class="new-post-container">
+    <form name="postform" novalidate>
+        <div class="form-group">
+            <label for="new-post-title">Title</label>
+            <input type="text" class="form-control" id="new-post-title" ng-model="$ctrl.title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="snew-post-content">Content</label>
+            <textarea class="form-control" id="new-post-content" rows="5" ng-model="$ctrl.content" required>
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addNewPost()">Submit</button>
+    </form>
+
+    <div class="validation" ng-if="!postform.$pristine && postform.$invalid">
+        Form is invalid, please fill every field before retrying.
+    </div>
+</div>
